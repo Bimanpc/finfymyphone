@@ -1,0 +1,12 @@
+<h1>Phone Geolocator</h1>
+
+<%= form_with url: locate_path, local: false do |form| %>
+  <%= form.label :address, "Enter Phone Number or Address:" %>
+  <%= form.text_field :address %>
+  <%= form.submit "Locate" %>
+<% end %>
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap", async: true, defer: true %>
+<%= javascript_pack_tag 'location' %>
