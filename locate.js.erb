@@ -1,0 +1,5 @@
+<% if @location %>
+  placeMarker({ lat: <%= @location.latitude %>, lng: <%= @location.longitude %> });
+<% else %>
+  alert('Location not found.');
+<% end %>
